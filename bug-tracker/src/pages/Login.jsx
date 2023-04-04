@@ -20,7 +20,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 import { useDispatch, useSelector } from 'react-redux';
-import { LoginApi } from '../actions/action';
+import { LoginApi, Msgmethod } from '../actions/action';
 
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
@@ -33,29 +33,29 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
-    const {isAuth, msg} =useSelector(state=>state.app)
+    const { isAuth, msg } = useSelector(state => state.app)
 
     const handleSubmit = () => {
-        dispatch(LoginApi({email,password}))
-       
+        dispatch(LoginApi({ email, password }))
+
     };
 
-    useEffect(()=>{
-        if(isAuth ){
-            navigate('/')
-           }
-           
-        // if(msg.length > 0){
+    useEffect(() => {
+        if (isAuth) {
+            navigate('/bugreport')
+        }
 
-        //     toast({
-        //         title: `${msg} `,
-        //     position: 'top',
-        //     status: 'success',
-        //     isClosable: true,
-        //   })
-        // }
-    },[isAuth,dispatch])
-   
+        if (msg.length > 0) {
+            toast({
+                title: `${msg} `,
+                position: 'top',
+                status: 'success',
+                isClosable: true,
+            })
+        }
+        dispatch(Msgmethod())
+    }, [msg, isAuth])
+
     const handleShowClick = () => setShowPassword(!showPassword);
     return (
         <>
