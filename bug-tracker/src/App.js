@@ -3,14 +3,14 @@ import {
   ChakraProvider,
   theme,
 } from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
 import Navbar from './components/Navbar';
+import MainRoutes from './pages/MainRoutes';
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
       <Navbar />
+      <MainRoutes />
     </ChakraProvider>
   );
 }

@@ -2,7 +2,6 @@ import {
     Box,
     Collapse,
     Flex,
-    Icon,
     IconButton,
     Stack,
     Text,
@@ -34,16 +33,13 @@ const Navbar = () => {
     };
 
 
-
-
-
-
     const MobileNav = () => {
         return (
             <Stack
                 bg={useColorModeValue('white', 'gray.800')}
                 p={4}
-                display={{ md: 'none' }}>
+                display={{ md: 'none' }}
+                >
                 <Flex
                     py={2}
                     justify={'space-between'}
@@ -85,7 +81,7 @@ const Navbar = () => {
     };
 
     return (
-        <Box pos={'sticky'} top="0">
+        <Box pos={'sticky'}  top="0">
             <Flex
                 justify="space-between"
                 borderBottom="1px solid grey"
