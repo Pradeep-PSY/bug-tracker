@@ -7,7 +7,7 @@ import {
 import thunk from 'redux-thunk';
 import { appReducer } from '../reducer/reducer';
 
-const rootReducer = combineReducers({ auth: appReducer });
+const rootReducer = combineReducers({ app: appReducer });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
