@@ -69,11 +69,11 @@ const BugPage = () => {
         <DragDropContext onDragEnd={handleDragEnd}>
 
             <Box border={'1px solid'}>
-                <Droppable droppableId='droppable'>
+                <Droppable droppableId='starting'>
                     {
                         (provided, snapshot) => (
                             <Box {...provided.droppableProps} ref={provided.innerRef} bg={snapshot.isDraggingOver ? 'lightgreen' : ""}>
-                                {/* <Button onClick={onOpen}>Open Modal</Button> */}
+                                <Button onClick={onOpen}>Open Modal</Button>
                                 {
                                     items.map((el, i) => (
                                         <Draggable key={el.id} draggableId={el.id} index={i}>
