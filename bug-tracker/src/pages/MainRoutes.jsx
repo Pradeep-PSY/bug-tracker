@@ -12,7 +12,7 @@ const MainRoutes = () => {
     <Routes>
       <Route path='/login' element={<Login />} />
       <Route path='/Signup' element={<Signup />} />
-      <Route path='/' element={<div>Welcome to BugReport </div>} />
+      <Route path='/' element={<div> Welcome to BugReport </div>} />
       <Route path='/bugreport' element={
         <RequiredAuth >
           <BugPage />
